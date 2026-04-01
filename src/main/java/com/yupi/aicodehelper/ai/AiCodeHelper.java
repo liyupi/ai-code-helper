@@ -5,16 +5,16 @@ import dev.langchain4j.data.message.SystemMessage;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.chat.response.ChatResponse;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
 public class AiCodeHelper {
 
-    @Resource
-    private ChatModel qwenChatModel;
+    @Autowired
+    private ChatModel chatModel;
 
     private static final String SYSTEM_MESSAGE = """
             你是编程领域的小助手，帮助用户解答编程学习和求职面试相关的问题，并给出建议。重点关注 4 个方向：
@@ -28,14 +28,14 @@ public class AiCodeHelper {
     public String chat(String message) {
         SystemMessage systemMessage = SystemMessage.from(SYSTEM_MESSAGE);
         UserMessage userMessage = UserMessage.from(message);
-        ChatResponse chatResponse = qwenChatModel.chat(systemMessage, userMessage);
+        ChatResponse chatResponse = chatModel.chat(systemMessage, userMessage);
         AiMessage aiMessage = chatResponse.aiMessage();
         log.info("AI 输出：" + aiMessage.toString());
         return aiMessage.text();
     }
 
     public String chatWithMessage(UserMessage userMessage) {
-        ChatResponse chatResponse = qwenChatModel.chat(userMessage);
+        ChatResponse chatResponse = chatModel.chat(userMessage);
         AiMessage aiMessage = chatResponse.aiMessage();
         log.info("AI 输出：" + aiMessage.toString());
         return aiMessage.text();
