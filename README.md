@@ -37,7 +37,7 @@
 
 #### AI 服务
 - **LangChain4j集成**: 采用业界领先的AI应用开发框架
-- **多模型支持**: 支持通义千问和 [MiniMax](https://platform.minimaxi.com/) 等大模型，通过配置切换
+- **通义千问模型**: 基于阿里云大模型，专业可靠
 - **流式响应**: 实时打字机效果，提升用户体验
 
 #### 安全机制
@@ -58,8 +58,7 @@
 - **Java**: JDK 21+
 - **Node.js**: 16.0+
 - **Maven**: 3.6+
-- **通义千问API**: 需申请API密钥（默认 LLM 提供商）
-- **MiniMax API**: 可选，需申请 [MiniMax API 密钥](https://platform.minimaxi.com/)
+- **通义千问API**: 需申请API密钥
 - **Big Model API**: 需申请API密钥
 
 ### 启动步骤
@@ -73,10 +72,6 @@ cd ai-code-helper
 # 配置API密钥
 # 编辑 src/main/resources/application.yml
 # 填入您的通义千问 API 和 Big Model API 密钥
-
-# （可选）切换到 MiniMax 作为 LLM 提供商：
-# 在 application.yml 中设置 ai.provider: minimax
-# 并填入 minimax.api-key
 
 # 启动后端服务
 mvn spring-boot:run
@@ -123,12 +118,6 @@ npm run dev
                     │   - 嵌入模型    │
                     │   - 流式输出    │
                     └─────────────────┘
-                    ┌─────────────────┐
-                    │   MiniMax API   │
-                    │   - M2.7 模型   │
-                    │   - 流式输出    │
-                    │ (OpenAI兼容接口) │
-                    └─────────────────┘
 ```
 
 
@@ -136,8 +125,7 @@ npm run dev
 ## 核心模块
 
 - `AiCodeHelperService`: 核心对话服务
-- `QwenChatModelConfig`: 通义千问模型配置
-- `MiniMaxChatModelConfig`: MiniMax 模型配置（OpenAI 兼容）
+- `QwenChatModelConfig`: 模型配置管理
 - `RagConfig`: 检索增强配置
 - `McpConfig`: 模型上下文协议
 
@@ -151,7 +139,6 @@ npm run dev
 
 - [LangChain4j](https://github.com/langchain4j/langchain4j) - 强大的AI应用开发框架
 - [阿里云通义千问](https://dashscope.aliyun.com/) - 优秀的大语言模型
-- [MiniMax](https://platform.minimaxi.com/) - 高性能大语言模型（M2.7，204K上下文）
 - [Spring Boot](https://spring.io/projects/spring-boot) - 简化的Java开发框架
 - [Vue.js](https://vuejs.org/) - 渐进式JavaScript框架
 

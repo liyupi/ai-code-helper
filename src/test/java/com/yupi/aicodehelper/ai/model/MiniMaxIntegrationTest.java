@@ -28,7 +28,7 @@ class MiniMaxIntegrationTest {
 
     private static final String API_KEY = System.getenv("MINIMAX_API_KEY");
     private static final String BASE_URL = "https://api.minimax.io/v1";
-    private static final String MODEL_NAME = "MiniMax-M2.7";
+    private static final String MODEL_NAME = "MiniMax-M3.1-Flash";
 
     @Test
     void testChatCompletion() {
@@ -89,10 +89,10 @@ class MiniMaxIntegrationTest {
     }
 
     @Test
-    void testHighspeedModel() {
+    void testAlternateModel() {
         ChatModel chatModel = OpenAiChatModel.builder()
                 .apiKey(API_KEY)
-                .modelName("MiniMax-M2.7-highspeed")
+                .modelName("MiniMax-M3")
                 .baseUrl(BASE_URL)
                 .temperature(0.7)
                 .build();

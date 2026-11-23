@@ -18,11 +18,10 @@ import java.util.List;
 /**
  * MiniMax LLM provider configuration.
  * <p>
- * Uses MiniMax's OpenAI-compatible API via langchain4j-open-ai.
  * Activated when {@code ai.provider=minimax} is set in application.yml.
  * </p>
  *
- * @see <a href="https://platform.minimaxi.com/document/guides/chat-model/pro/api">MiniMax API docs</a>
+ * @see <a href="https://platform.minimax.io/docs/api-reference/text-chat-openai.md">MiniMax API docs</a>
  */
 @Configuration
 @ConditionalOnProperty(name = "ai.provider", havingValue = "minimax")
@@ -32,7 +31,7 @@ public class MiniMaxChatModelConfig {
 
     private String apiKey;
 
-    private String modelName = "MiniMax-M2.7";
+    private String modelName = "MiniMax-M3.1-Flash";
 
     private String baseUrl = "https://api.minimax.io/v1";
 
