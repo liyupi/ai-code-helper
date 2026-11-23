@@ -13,7 +13,7 @@
 >
 > 配套学习入口：观看 [B 站完整视频教程](https://bilibili.com/video/BV1X4GGziEyr)，阅读 [公众号详细文字教程](https://mp.weixin.qq.com/s/7cNh7ndeiWiHBjnkTkz_Zg)，或者直接前往 [编程导航 AI 编程助手课程主页](https://www.codefather.cn/course/1943267371799080961) 与 [编程导航学习网](https://www.codefather.cn/) 获取更多实战教程与编程学习路线。如果这个项目对你有帮助，欢迎点亮右上角的 Star 支持一下，这会激励我继续输出更多高质量开源教程！
 
-![AI 编程小助手 LangChain4j 全栈实战项目功能界面展示](https://pic.yupi.icu/1/AI%E7%BC%96%E7%A8%8B%E5%B0%8F%E5%8A%A9%E6%89%8B%E9%A1%B9%E7%9B%AE.png)
+![AI 编程小助手 LangChain4j 全栈实战项目功能界面展示](./doc/images/img-01.png)
 
 ## ✨ 项目介绍
 
