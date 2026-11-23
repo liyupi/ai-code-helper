@@ -5,6 +5,9 @@ server:
   port: 8081
   servlet:
     context-path: /api
+# Select minimax to enable the MiniMax chat models.
+ai:
+  provider: qwen
 langchain4j:
   community:
     dashscope:
@@ -19,3 +22,10 @@ langchain4j:
         api-key: <Your API Key>
 bigmodel:
   api-key: <Your API Key>
+# MiniMax provider config (used when ai.provider=minimax)
+minimax:
+  api-key: ${MINIMAX_API_KEY:}
+  # Choose MiniMax-M3 to use the alternate model.
+  model-name: MiniMax-M3.1-Flash
+  # Use https://api.minimaxi.com/v1 for the China region.
+  base-url: https://api.minimax.io/v1
